@@ -4,7 +4,7 @@ sort: 3
 
 # bof
 
-home 디렉토리에 col.c파일을 확인하면 소스코드를 볼 수 있다.
+bof바이너리와 bof.c파일을 다운받을 수 있다.
 
 ```c
 #include <stdio.h>
