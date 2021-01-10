@@ -27,7 +27,7 @@ int main(int argc, char* argv[]){
 }
 ```
 
-<img src="/picture/hacker_school/pwnable.kr/bof.png" width="1000"/>
+<img src="/picture/pwnable.kr/bof.png" width="1000"/>
 
 overflowme의 주소는 ebp-0x2c이고, func의 첫번째 인자인 key의 위치는 ebp+0x8이기 때문에 아래와 같이 해주면 된다.
 
