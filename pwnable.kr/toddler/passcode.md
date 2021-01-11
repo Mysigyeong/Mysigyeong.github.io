@@ -146,6 +146,10 @@ got영역에는 plt에서 jump할 주소가 들어있는데, 함수가 처음으
 login함수를 살펴보니, 첫번째 scanf와 두번째 scanf사이에 fflush함수가 존재하길래 fflush함수의 got값을 login함수 내에 존재하는 system("/bin/cat flag") 루틴의 주소로 변경했다.<br>
 name을 통해서 passcode1부분에 fflush의 got영역 주소를 쓰고, login함수의 첫번째 scanf에서 system("/bin/cat flag")루틴의 주소를 입력하게 되면 fflush함수가 호출되는 순간 flag를 얻을 수 있다.
 
+```warning
+name을 입력받을 때 scanf를 통해서 입력받기 때문에 got의 주소값에 tab(0x09), 개행(0x0a), space bar(0x20), null(0x0)과 같은 값들이 들어가면 거기서 잘린다. 잘 확인하자.
+```
+
 ```bash
 #                        fflush got의 주소 = 0x804a004        0x080485e3 = 134514135
 passcode@pwnable:~$ (python -c "print('\x04\xa0\x04\x08'*25+'\n134514135\n')";cat) | ./passcode
