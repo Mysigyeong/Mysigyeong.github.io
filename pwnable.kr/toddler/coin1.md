@@ -45,7 +45,7 @@ Binary Search를 이용하면 쉽게 풀 수 있을 것 같다.<br>
 pwntools를 이용해서 코드를 짜면 되겠다.<br><br>
 원격접속하면 느리기 때문에 pwnable.kr에 접속한 후 /tmp폴더 내부에 스크립트를 짜서 넣고 localhost로 돌렸다.
 
-```py
+```python
 from pwn import *
 import time
 import re
