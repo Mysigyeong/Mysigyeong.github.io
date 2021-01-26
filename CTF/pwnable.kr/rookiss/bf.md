@@ -4,6 +4,10 @@ sort: 1
 
 # brain fuck
 
+```tip
+그림 작아서 안보이면 새창에서 여세요.
+```
+
 bf 바이너리와 bf_libc.so를 다운받자.
 
 <img src="/picture/pwnable.kr/bf_1.png" width="1000"/>
