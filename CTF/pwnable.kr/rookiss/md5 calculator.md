@@ -79,8 +79,11 @@ canary -= random_values[5]
 canary += random_values[6]
 canary -= random_values[7]
 
-if canary < 0:
+# uint32_t로 범위 맞추기
+while canary < 0:
     canary += 0x100000000
+while canary >= 0x100000000:
+    canary -= 0x100000000
 
 '''
 Welcome! you are authenticated.
