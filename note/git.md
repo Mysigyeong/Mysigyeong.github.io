@@ -14,7 +14,7 @@ git push origin (branch)
 
 ## github ssh key 등록
 
-rsa 키쌍을 생성하고, ssh에 등록한다.
+rsa 키쌍을 생성하고, ssh-agent에 등록한다.
 
 ```
 ssh-keygen -t rsa -b 4096 -C "email"
@@ -22,4 +22,6 @@ eval `ssh-agent -s`
 ssh-add (private key)
 ```
 
-public key는 github 사이트에 들어가 등록한다.
+public key는 github 사이트에 들어가 등록한다.<br>
+ssh-agent를 실행하고 ssh-add를 통해 key를 등록하는 것은 해당 key를 이용하기 전에 계속 해줘야한다.<br>
+귀찮아서 bashrc파일에 넣어놨다.
