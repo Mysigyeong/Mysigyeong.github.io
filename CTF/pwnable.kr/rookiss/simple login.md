@@ -29,8 +29,8 @@ auth함수가 골때리는데, 사용자의 input의 평문을 가지고 md5 has
 <img src="/picture/pwnable.kr/login_4.png" width="1000"/>
 
 사용자의 input이 복사되는 부분을 살펴보니 memcpy를 하기 전에 eax를 0xc만큼 더하는 것을 볼 수 있다.<br>
-따라서 ebp-0x8부분에서 0xc만큼 복사가 이루어지니, auth함수의 ebp가 조져진다.<br><br>
-ebp를 조질 수 있다는 것은, 함수의 마지막부분의 `leave`, `ret`를 통해 esp를 조지고 최종적으로 프로그램의 흐름까지 조져버릴 수 있다는 것을 의미한다.<br><br>
+따라서 ebp-0x8부분에서 0xc만큼 복사가 이루어지니, auth함수의 saved ebp가 조져진다.<br><br>
+saved ebp를 조질 수 있다는 것은, main 함수의 ebp가 조져진다는 것이고, main함수의 마지막부분의 `leave`, `ret`를 통해 esp를 조지고 최종적으로 프로그램의 흐름까지 조져버릴 수 있다는 것을 의미한다.<br><br>
 
 <img src="/picture/pwnable.kr/login_3.png" width="1000"/>
 
