@@ -231,7 +231,7 @@ p.interactive()
 ```tip
 ## 알게 된 점
 
-ROP
+ROP는 가젯찾기 안그래도 빡치는데 되는 주소인지 확인하느라 더 빡쳤다.
 
 execl, execve 구조(?)
 ```
