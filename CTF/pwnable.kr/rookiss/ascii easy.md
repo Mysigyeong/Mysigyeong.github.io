@@ -97,7 +97,7 @@ payload를 어떻게 구성할까 생각을 해야한다. 가장 단순하게 sy
 
 Code reference 기능을 이용해 "/bin/sh" 문자열을 사용하는 루틴들을 살펴보았고, 그 중에 아주 좋은 루틴을 발견했다.<br><br>
 
-<img src="/picture/pwnable.kr/ascii_easy_2.png" width="500"/>
+<img src="/picture/pwnable.kr/ascii_easy_2.png" width="630"/>
 
 주소도 마음에 들고, 루틴도 `execl("/bin/sh", "sh", "-c", eax, NULL)`로 아주 좋다. 따라서 eax에 "/bin/sh"를 넘겨주고 "/bin/sh", "-c"가 제대로 들어갈 수 있도록 ebx도 설정을 해주면 될 것 같다.<br>
 하지만 여기까지만 하면 segmentation fault가 뜬다.<br><br>
