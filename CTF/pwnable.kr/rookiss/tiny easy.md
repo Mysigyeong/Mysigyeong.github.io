@@ -4,11 +4,7 @@ sort: 6
 
 # tiny easy
 
-```tip
-그림이 작아서 잘 안보이면 그림을 새창에서 여세요.
-```
-
-scp를 이용하여 tiny_easy 바이너리파일을 내려받아 binary ninja에 넣어보았다.
+뭐 objdump로도 안뜨고 그러길래 scp를 이용하여 tiny_easy 바이너리파일을 내려받아 binary ninja에 넣어보았다.
 
 ```
 _start:
