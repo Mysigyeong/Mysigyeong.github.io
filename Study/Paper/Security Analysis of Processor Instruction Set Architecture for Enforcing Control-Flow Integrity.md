@@ -47,6 +47,7 @@ Control Protection(CP) exception을 새로 도입해 CF에 대한 issue 따로 �
 4.	mode가 변하는 시점 또는 context switch하는 타이밍에도 control flow에 대한 protection이 이루어져야 한다.
 5.	performance, memory usage, code size 변화에 대한 overhead를 최소화해야한다.
 6.	ISA의 특정 코드들을 끼워 넣는 프로그래밍 언어는 피한다.<br>
+
 ```
 There are many examples of embedding web languages and programming languages
 
@@ -59,6 +60,7 @@ JSP: HTML embedding of Java fragments
 PHP: HTML embedding of C-like fragments
 BRL: HTML embedding of Scheme fragments
 ```
+
 7.	return address protection, instruction alignment만 딱 할 수 있을 정도의 최소한의 권한만 부여해야한다.
 8.	stack과 function call에 대한 ABI를 유지한다.
 9.	tail call, co-routine과 같은 common software construct에 어떠한 제한도 줘선 안된다.
