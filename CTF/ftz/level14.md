@@ -11,7 +11,7 @@ password : what that nigga want?
 ```
 
 hint를 보면 attackme의 소스코드가 나온다.<br>
-attackme에 setuid가 걸려있으니 얘를 조져보자.
+attackme에 setuid가 걸려있으니 얘를 공격해보자.
 
 ```c
 #include <stdio.h>
@@ -29,7 +29,7 @@ main()
    }
 }
 ```
-지역변수 check만 조지면 되는 간단한 문제다.<br><br>
+지역변수 check만 변조하면 되는 간단한 문제다.<br><br>
 GDB를 이용하여 attackme의 main함수를 disassemble했다.
 
 <pre>

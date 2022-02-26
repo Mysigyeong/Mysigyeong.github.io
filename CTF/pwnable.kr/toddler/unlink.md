@@ -53,7 +53,7 @@ int main(int argc, char* argv[]){
 ```
 
 OBJ A, B, C의 크기가 같은데 연속적으로 malloc을 했기 때문에 heap상에서 가까이 있을 것 같다.<br>
-또한 A->buf를 gets가지고 받고있기 때문에 buffer overflow를 통해서 object의 fd, bk 포인터를 조져서 unlink를 할 때 프로그램의 흐름을 변경시킬 수 있을 것 같다.<br><br>
+또한 A->buf를 gets가지고 받고있기 때문에 buffer overflow를 통해서 object의 fd, bk 포인터를 변조해서 unlink를 할 때 프로그램의 흐름을 변경시킬 수 있을 것 같다.<br><br>
 c코드만 봐서는 이 문제 못푼다. main을 disassemble해야 문제를 풀 수 있다. c코드에는 나와있지 않은 코드부분이 존재하기 때문이다.
 
 ```gdb
@@ -75,7 +75,7 @@ Dump of assembler code for function main:
 
 main함수의 첫부분과 끝부분에 희한한 가젯이 존재한다. 이를 이용해야 문제를 풀 수 있다.<br>
 잘 보면 ebp - 4에 위치한 값을 ecx로 옮기고, ecx - 4에 위치한 값을 esp로 옮긴 뒤에 ret를 때리는 것을 확인할 수 있다. 따라서 ebp - 4에 저장되어있는 값을 조진다면 프로그램의 흐름을 변경시킬 수 있다.<br>
-아래 그림과 같이 조져놓으면 main함수가 종료되고 ret될 때 shell함수를 실행시킬 수 있다.
+아래 그림과 같이 변조하면 main함수가 종료되고 ret될 때 shell함수를 실행시킬 수 있다.
 
 <img src="/picture/pwnable.kr/unlink.png" width="1000"/>
 

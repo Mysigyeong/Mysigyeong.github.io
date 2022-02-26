@@ -23,12 +23,12 @@ brainfuck에 대한 연산에 대한 결과를 저장하기 위해서 tape라는
 
 do_brainfuck함수도 간단하다. brainfuck 문법에 충실하여 구현하였다. ([]빼고.)<br>
 그러나, p값을 증가 및 감소시킬 때, p값이 유효한 범위 내에 있는지(tape내부에 있는지) 확인해야하는데 확인을 하지 않는다.<br>
-따라서 tape의 범위를 넘어서서 다른 공간의 데이터를 읽고, 조질 수 있다.<br><br>
+따라서 tape의 범위를 넘어서서 다른 공간의 데이터를 읽고, 바꿀 수 있다.<br><br>
 
 <img src="/picture/pwnable.kr/bf_4.png" width="1000"/>
 
 tape 위를 보니 got 및 여러 값들이 보인다.<br>
-이를 이용해서 프로그램을 조져버리면 된다.<br><br>
+이를 이용해서 프로그램을 공격하면 된다.<br><br>
 
 stdin값을 읽어서 libc내부에 _IO_2_1_stdin_ 주소값을 얻는다.<br>
 libc내부에 존재하는 symbol의 주소값을 읽어왔으니, libc에 걸려있는 ASLR을 우회하게 되었다.<br>

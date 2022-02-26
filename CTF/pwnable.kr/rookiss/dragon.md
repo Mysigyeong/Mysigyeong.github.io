@@ -21,12 +21,12 @@ SecretLevel함수로 들어오면 input을 또 받는데, 저게 Nice_뭐시기 
 <img src="/picture/pwnable.kr/dragon_3.png" width="1000"/>
 
 1이나 2를 넣으면, FightDragon함수로 가는데, 여기서 player정보랑 monster정보 넣고 PriestAttack또는 KnightAttack에서 싸운다.<br>
-근데 이거 정상적인 방법으로는 못때려죽인다. 게임을 그지같이 만들어놨다.<br><br>
+근데 이거 정상적인 방법으로는 못죽인다.<br><br>
 
 <img src="/picture/pwnable.kr/dragon_4.png" width="1000"/>
 
 여기서 monster랑 player랑 struct field살펴보면 monster의 hp가 1byte인 것을 확인할 수 있다. 그리고 monster는 매 턴마다 heal을 하는 것을 볼 수 있다.<br>
-따라서 priest로 계속해서 수비하면서 monster의 hp가 overflow가 될 때까지 뻐기면 된다.<br><br>
+따라서 priest로 계속해서 수비하면서 monster의 hp가 overflow가 될 때까지 버티면 된다.<br><br>
 
 <img src="/picture/pwnable.kr/dragon_5.png" width="1000"/>
 

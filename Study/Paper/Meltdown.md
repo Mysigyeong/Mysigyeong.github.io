@@ -26,7 +26,7 @@ branch predictor는 실제로 branch가 정해지기 전에 미리 예측 때리
 
 ### 2.2 Address Space
 각각의 process마다 virtual address space가지고 있어서 memory isolation이 이루어짐.<br>
-각각의 virtual address space는 user영역과 kernel영역이 존재. kernel영역에는 kernel이 사용하는 데이터를 관리하는 것 뿐만 아니라, user영역을 수정해야할 때를 위해서 physical memory 전체가 mapping되어있는 영역이 존재한다고 한다. Linux, OS X에서는 direct-physical map을 이용해 전체 physical memory를 pre-define된 virtual address에다가 박아넣는다. Windows에서는 [paged pools, non-paged pools, system cache](https://superuser.com/questions/1410289/what-are-commited-memory-cached-paged-not-paged-pool-how-they-are-d)가 존재. Pool들은 physical memory를 virtual memory공간으로 mapping한 것인데, 페이징 파일에 기록되거나, 불려올 수 있는 가상 메모리 공간인 paged pools, 실제 메모리 상에 상주하여 접근 가능한 non-paged pools 존재. Kernel cache는 추가적으로 모든 file-backed page들(file을 읽어들여서 만든 page)에 대한 mapping도 가지고 있다.<br>
+각각의 virtual address space는 user영역과 kernel영역이 존재. kernel영역에는 kernel이 사용하는 데이터를 관리하는 것 뿐만 아니라, user영역을 수정해야할 때를 위해서 physical memory 전체가 mapping되어있는 영역이 존재한다고 한다. Linux, OS X에서는 direct-physical map을 이용해 전체 physical memory를 pre-define된 virtual address에다가 넣는다. Windows에서는 [paged pools, non-paged pools, system cache](https://superuser.com/questions/1410289/what-are-commited-memory-cached-paged-not-paged-pool-how-they-are-d)가 존재. Pool들은 physical memory를 virtual memory공간으로 mapping한 것인데, 페이징 파일에 기록되거나, 불려올 수 있는 가상 메모리 공간인 paged pools, 실제 메모리 상에 상주하여 접근 가능한 non-paged pools 존재. Kernel cache는 추가적으로 모든 file-backed page들(file을 읽어들여서 만든 page)에 대한 mapping도 가지고 있다.<br>
 Kernel ASLR(KASLR)을 이용해 부팅할때마다 driver들의 offset을 바꿔서 공격 힘들게 해왔는데, meltdown으로 우회 가능.
 
 ### 2.3. cache attacks

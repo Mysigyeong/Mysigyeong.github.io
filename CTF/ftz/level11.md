@@ -12,7 +12,7 @@ password : what!@#$?
 
 level10까지는 리눅스 사용방법좀 소개하는 튜토리얼식이었는데 level11부터는 그냥 쌩 pwnable문제가 나온다.<br><br>
 hint를 보면 attackme의 소스코드가 나온다.<br>
-attackme에 setuid가 걸려있으니 얘를 조져보자.
+attackme에 setuid가 걸려있으니 얘를 공격해보자.
 
 ```c
 #include <stdio.h>
@@ -68,7 +68,7 @@ Dump of assembler code for function main:
 0x080484bb (main+75):	ret
 </pre>
 
-strcpy가 사용되는 부분을 살펴보면 str의 시작부분은 ebp로부터 0x108byte위에 존재하는 것을 알 수 있다. 따라서 return address를 조지기 위해선 0x10c byte(padding 0x108 + ebp 0x04)길이의 padding 뒤에 우리가 원하는 주소값을 넣으면 된다.<br><br>
+strcpy가 사용되는 부분을 살펴보면 str의 시작부분은 ebp로부터 0x108byte위에 존재하는 것을 알 수 있다. 따라서 return address를 변조하기 위해선 0x10c byte(padding 0x108 + ebp 0x04)길이의 padding 뒤에 우리가 원하는 주소값을 넣으면 된다.<br><br>
 그러나 문제가 발생한다. stack 메모리 영역이 프로그램이 실행될때마다 다른 주소로 mapping이 되기 때문에 실행할 때마다 주입한 shellcode의 주소가 달라진다.(ASLR) 이를 극복하기 위해서 padding을 shellcode보다 위에 놓고, padding내용을 아무것도 실행하지 말라는 뜻의 명령어인 0x90(nop)으로 채워넣어서 주소값이 변하더라도 padding영역 어느 곳으로 점프한다면 nop을 따라서 쭉 내려오다가 결국 shellcode를 실행할 수 있도록하는 즉, shellcode 실행의 확률을 높이는 nop sled를 사용할 수 있겠다. 그러나, 이것은 어디까지나 확률을 높이는 것일 뿐이기에, ASLR이 걸려있지 않은 다른 영역을 사용하는 방법을 모색했다.
 
 <img src="/picture/hacker_school/ftz/level11_2.png" width="700"/>

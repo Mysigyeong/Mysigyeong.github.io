@@ -11,7 +11,7 @@ password : guess what
 ```
 
 hint를 보면 attackme의 소스코드가 나온다.<br>
-attackme에 setuid가 걸려있으니 얘를 조져보자.
+attackme에 setuid가 걸려있으니 얘를 공격해보자.
 
 ```c
 #include <stdio.h>

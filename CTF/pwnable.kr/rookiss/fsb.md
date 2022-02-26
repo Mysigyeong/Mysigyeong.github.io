@@ -69,8 +69,8 @@ int main(int argc, char* argv[], char** envp){
 
 `/dev/urandom`을 이용해 key를 random값으로 채운 후, pw와 비교해서 똑같으면 shell을 실행시켜주는 코드이다.<br>
 random값을 우리가 때려맞출 수 없기 때문에 pw를 입력하기 전에 fsb를 사용할 수 있게 해줬다.<br>
-fsb로 key를 원하는 값으로 조진 후에 pw에 조진 값을 넣으면 될 것 같다.<br><br>
-key길이가 8byte이기 때문에 `%hn`을 이용해 2byte씩 4번 조지면 될 것으로 여겨진다.<br>
+fsb로 key를 원하는 값으로 바꾼 후에 pw에 바꾼 값을 넣으면 될 것 같다.<br><br>
+key길이가 8byte이기 때문에 `%hn`을 이용해 2byte씩 4번 변조하면 될 것으로 여겨진다.<br>
 
 key는 전역변수이기 때문에 data영역에 저장이 되어있을 것이고, aslr이 적용되지 않았기 때문에 고정된 주소값을 가지게 된다.<br>
 main함수에 `read(fd, &key, 8)`부분을 확인하면 된다.
@@ -94,7 +94,7 @@ fsb를 이용해서 key값을 잘 조작해서 풀면 될 것 같다.
 edx에 strtoull의 결과값의 상위 4byte가 들어가고 eax에 하위 4byte가 들어가는데, edx가 eax로 덮어씌워지고나선, 31번 arithmetic right shift를 한다. 즉, edx는 eax의 MSB로 채워진다는 소리이다.<br>
 따라서 소스코드와는 다르게 동작하는 부분이 존재하게 되고, 결론적으로 key값의 상위 4byte는 하위 4byte의 MSB로 채워져야 한다는 소리이다.<br>
 그래서 상위 4byte에는 0을 넣었고, 하위 4byte에는 대충 MSB가 0이 되도록 했다.<br>
-`char*** pargv = &argv; char*** penvp = &envp;` 부분을 이용해 fsb의 함수 인자가 저장되는 위치를 알 수 있기 때문에 해당하는 부분에 key의 상위 4byte주소와 하위 4byte주소를 넣은 뒤, key를 조질것이다.<br><br>
+`char*** pargv = &argv; char*** penvp = &envp;` 부분을 이용해 fsb의 함수 인자가 저장되는 위치를 알 수 있기 때문에 해당하는 부분에 key의 상위 4byte주소와 하위 4byte주소를 넣은 뒤, key를 공격할 것이다.<br><br>
 
 ```
 Give me some format strings(1)
@@ -109,7 +109,7 @@ stack memory가 어떻게 생겼는지 알아보기위해 대충 %x 엄청 넣�
 ebp부분도 저렇게 출력시켜보니, 0x08048791이 return address인 것을 알 수 있다.<br>
 그리고 return address의 주소는 0xffb9acac인 것을 알 수 있다.<br>
 따라서 pargv와 penvp에는 0xffb9acb0과 0xffb9acb4가 저장되어있을 것이다.<br>
-따라서 이것을 잘 활용하여 key를 조지면 될 듯 하다.<br>
+따라서 이것을 잘 활용하여 key를 변조하면 될 듯 하다.<br>
 
 ```python
 from pwn import *

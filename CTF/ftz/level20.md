@@ -11,7 +11,7 @@ password : we are just regular guys
 ```
 
 hint를 보면 attackme의 소스코드가 나온다.<br>
-attackme에 setuid가 걸려있으니 얘를 조져보자.
+attackme에 setuid가 걸려있으니 얘를 공격해보자.
 
 ```c
 #include <stdio.h>
@@ -23,7 +23,7 @@ main(int argc,char **argv)
 }
 ```
 
-사용자의 input을 그대로 printf에 때려 박는다. 여기에서 format string bug (FSB)가 발생한다.<br>
+사용자의 input을 그대로 printf에 입력한다. 여기에서 format string bug (FSB)가 발생한다.<br>
 printf의 포맷중에서는 화면에 출력하는 것 뿐만아니라 메모리에 입력하는 포맷도 존재하기 때문에 이를 이용하여 임의의 공간에 임의의 값을 쓰는 것이 가능해진다.
 
 ## Format String Bug
@@ -31,7 +31,7 @@ printf의 포맷중에서는 화면에 출력하는 것 뿐만아니라 메모�
 printf에는 무려 지금까지 출력한 byte수를 저장할 수 있도록 %n(4byte값으로 저장), %hn(2byte), %hhn(1byte) 포맷이 존재한다.<br>
 따라서 %n과 같은 서식문자가 저장할 공간의 메모리 주소를 미리 알아내어 준비한 뒤 원하는 값을 해당 메모리 주소에 넣기 위해서 원하는 값만큼 %n 이전에 출력하면 된다.<br><br>
 저장할 공간의 메모리 주소를 미리 알아내어 다른 부분은 훼손하지 않고 해당 부분만 변형할 수 있기 때문에 bof보다 더 영향력이 크면 컸지 작진 않다.<br>
-문제는 메모리 주소를 사전에 알아야 한다는 것인데, 해커스쿨 플랫폼 같은 경우에는 stack에 ASLR이 걸려있기 때문에 입력 buffer와의 간격을 계산하여 return address를 조졌던 bof와 달리, fsb로는 return address를 조지기는 어려워 보인다. 따라서 저장위치가 바뀌지 않으면서도 프로그램의 흐름을 바꿀 수 있는 부분을 이용해야한다.
+문제는 메모리 주소를 사전에 알아야 한다는 것인데, 해커스쿨 플랫폼 같은 경우에는 stack에 ASLR이 걸려있기 때문에 입력 buffer와의 간격을 계산하여 return address를 변조했던 bof와 달리, fsb로는 return address를 변조하기는 어려워 보인다. 따라서 저장위치가 바뀌지 않으면서도 프로그램의 흐름을 바꿀 수 있는 부분을 이용해야한다.
 
 ### Constructor, Destructor
 
@@ -240,7 +240,7 @@ End of assembler dump.
 ### attackme
 
 .dtors의 주소값이 0x8049594이다. hackerschool 플랫폼은 stack에만 ASLR이 걸려있기 때문에 나머지는 고정적인 주소값을 가지게 된다.<br>
-따라서 0x8049598주소부터 4byte를 쉘코드의 주소로 조지면 된다.<br>
+따라서 0x8049598주소부터 4byte를 쉘코드의 주소로 변조하면 된다.<br>
 쉘코드는 level17 때처럼 환경변수에 넣어놓고 사용했다.
 
 <pre>

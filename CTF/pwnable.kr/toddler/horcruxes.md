@@ -22,7 +22,7 @@ init_ABCDEFG함수에서는 전역변수인 a, b, c, d, e, f, g에다가 랜덤�
 
 input이 각각의 전역변수 a, b, c, d, e, f, g와 맞으면 A, B, C, D, E, F, G함수를 각각 호출할 수 있게 된다.<br>
 근데 init_ABCDEFG에서 봤듯이 쟤네는 랜덤값이기 때문에 그냥 호출하지 말라는 소리다.<br><br>
-가장 마지막 else문을 보면 gets를 사용하는 것을 확인할 수 있고, 이를 이용해서 ropme함수의 return address를 조져서 rop를 할 수 있게 된다.<br>
+가장 마지막 else문을 보면 gets를 사용하는 것을 확인할 수 있고, 이를 이용해서 ropme함수의 return address를 변조해서 rop를 할 수 있게 된다.<br>
 최상은 바로그냥 flag 호출하는 곳으로 뛰는 것이지만, ropme함수의 주소에 보면 중간에 0x0a('\n')가 들어있기 때문에 gets에 해당 주소를 넣었다간 그대로 개행에서 잘려버리고 만다.<br>
 따라서 그냥 고분고분하게 호크룩스들을 모아주자.
 

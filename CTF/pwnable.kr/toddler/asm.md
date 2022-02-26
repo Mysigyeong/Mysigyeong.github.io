@@ -106,7 +106,7 @@ int main(int argc, char** argv)
 }
 ```
 
-open인자에 직접 파일 이름을 박는 것이 아니라 굳이 filename지역변수를 만드는 이유는, 직접 인자에 박아버리면 문자열이 rodata section에 박히기 때문에 쉘코드를 만들 때 짜증난다.<br>
+open인자에 직접 파일 이름을 넣는 것이 아니라 굳이 filename지역변수를 만드는 이유는, 직접 인자에 넣어버리면 문자열이 rodata section에 들어가기 때문에 쉘코드를 만들기 힘들어진다.<br>
 위와 같이 만들고 빌드 한 뒤에 objdump가지고 disassemble하고 필요한 부분만 hxd같은걸로 잘라서 보내면 된다.
 
 ```bash

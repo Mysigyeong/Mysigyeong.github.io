@@ -89,7 +89,7 @@ Dump of assembler code for function vuln:
 End of assembler dump.
 ```
 
-buf의 위치가 ebp - 0x1c이므로 return address를 조지기 위해선 0x20 byte padding이 필요하다.<br><br>
+buf의 위치가 ebp - 0x1c이므로 return address를 변조하기 위해선 0x20 byte padding이 필요하다.<br><br>
 payload를 어떻게 구성할까 생각을 해야한다. 가장 단순하게 system("/bin/sh")를 생각해봤는데, system의 주소값과 문자열 "/bin/sh"의 주소값 모두 non ascii value가 껴있어서 접었다.<br>
 그러다가 다른 좋은 루틴을 찾았다.
 
@@ -145,7 +145,7 @@ fff9e000-fffbf000 rw-p 00000000 00:00 0                                  [stack]
 ```python
 from pwn import *
 
-##### return address를 조지기 위한 padding
+##### return address를 변조하기 위한 padding
 payload = b'A'*32
 
 ##### __environ@got 조작
@@ -231,7 +231,7 @@ p.interactive()
 ```tip
 ## 알게 된 점
 
-ROP는 가젯찾기 안그래도 빡치는데 되는 주소인지 확인하느라 더 빡쳤다.
+ROP는 가젯찾기 힘든데 되는 주소인지 확인하느라 더 힘들었다.
 
 execl, execve 구조(?)
 ```

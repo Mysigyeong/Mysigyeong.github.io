@@ -11,7 +11,7 @@ password : swimming in pink
 ```
 
 hint를 보면 attackme의 소스코드가 나온다.<br>
-attackme에 setuid가 걸려있으니 얘를 조져보자.
+attackme에 setuid가 걸려있으니 얘를 공격해보자.
 
 ```c
 main()
@@ -23,7 +23,7 @@ main()
 
 간단한 bof문제이다. 하지만 setuid가 걸려있지 않기 때문에 단순히 쉘코드를 입력하면 쉘을 얻더라도 권한이 그대로인 쉘을 획득한다.<br>
 따라서 system을 통해 쉘을 실행하기 전에 `setreuid(level20's uid)`를 해줘야한다.<br><br>
-먼저 main함수의 return address를 조지기 위해 buf의 위치를 파악한 후 padding길이를 구한다.
+먼저 main함수의 return address를 변조하기 위해 buf의 위치를 파악한 후 padding길이를 구한다.
 
 <pre>
 (gdb) disas main

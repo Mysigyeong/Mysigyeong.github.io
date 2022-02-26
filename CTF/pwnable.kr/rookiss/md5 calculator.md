@@ -110,7 +110,7 @@ p.send(base64_payload + b"\x00/bin/sh\n")
 p.interactive()
 ```
 
-"/bin/sh"문자열은 그냥 g_buf안에다가 base64로 encode된 값 뒤에 추가로 넘겨줘서 박아넣었다.<br>
+"/bin/sh"문자열은 그냥 g_buf안에다가 base64로 encode된 값 뒤에 추가로 넘겨줘서 넣었다.<br>
 사용자의 input을 받을 때 fgets함수를 이용해서 받는다. fgets는 개행을 만날 때까지 입력값을 받기 때문에, NULL문자도 입력할 수 있다.<br>
 "/bin/sh"문자열을 그냥 base64 문자열 바로 뒤에 붙여버리면 base64 decode가 되지 않기 때문에 중간에 NULL문자를 넣어서 base64 문자열까지만 복호화루틴에서 사용될 수 있도록 해야한다.
 
