@@ -9,7 +9,7 @@
 * 성균관대학교 인터넷보안연구실 학부연구생 2021
 
 ## 이력
-* 2020 한국차세대컴퓨팅학회 하계학술대회 장려상 - SGX를 이용한 엣지 서버로의 안전한 컴퓨팅 오프로드 방법
+* [2020 한국차세대컴퓨팅학회 하계학술대회 장려상 - SGX를 이용한 엣지 서버로의 안전한 컴퓨팅 오프로드 방법](/paper/sgx_paper.pdf)
 * [2020 BoB 프로젝트 - PS4 hacking guideline](https://github.com/Hacker-s-PlayStation/PlayStation4-Hacking-Guideline)
 * 2021 성균관대학교 버그바운티 대회 장려상
 
