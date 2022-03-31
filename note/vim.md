@@ -27,5 +27,5 @@ endif
 
 ## vim 명령어
 
-vs: vertical split
+vs: vertical split\n
 sp: (horizontal) split
