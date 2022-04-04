@@ -17,9 +17,8 @@ set incsearch
 set ai
 set expandtab
 
-filetypeplugin indent on
-autocmd FileType python setlocal tabstop=4 expandtab shiftwidth=4
-softtabstop=4
+filetype plugin indent on
+autocmd FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 if has("syntax")
     syntax on
 endif
