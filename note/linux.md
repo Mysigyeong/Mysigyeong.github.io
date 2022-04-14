@@ -27,3 +27,8 @@ sudo update-grub
 
 ## nvidia 그래픽카드 드라이버 설치
 Software & Updates에 Additional Drivers에서 설치하면 된다.
+
+## .deb 파일 설치
+```
+sudo dpkg -i package.deb
+```

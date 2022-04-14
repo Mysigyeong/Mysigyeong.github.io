@@ -4,6 +4,17 @@ sort: 2
 
 # Git
 
+## add 취소
+```
+git reset
+```
+
+## commit 취소
+```
+# 가장 최근 commit 취소
+git reset HEAD~1
+```
+
 ## github 파일 삭제
 
 ```
