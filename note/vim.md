@@ -15,7 +15,8 @@ set number
 set hlsearch
 set incsearch
 set ai
-set expandtab
+# expandtab: convert tab to space
+set noexpandtab
 
 filetype plugin indent on
 autocmd FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
