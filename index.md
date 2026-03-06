@@ -3,8 +3,6 @@ layout: single
 author_profile: true
 ---
 
-# Byeongsu Woo
-
 Ph.D Student, Graduate School of Information Security, KAIST<br>
 I'm working at [CysecLab](https://cysec.kr).<br>
 E-mail: wbs79@kaist.ac.kr<br>
