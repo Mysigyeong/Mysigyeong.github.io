@@ -17,17 +17,17 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Site Title"
+title                    : "Byeongsu Woo"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Byeongsu Woo"
+description              : "Byeongsu's blog"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : " "
 breadcrumbs              : # true, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)
@@ -67,7 +67,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
+  hide                   : true
 search                   : # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
@@ -113,53 +113,53 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  name             : "Byeongsu Woo"
+  avatar           : "/assets/images/bio_image.jpg"
+  bio              : "Ph.D Student,<br>Graduate School of<br>Information Security,<br>KAIST"
+  location         : "Daejeon, Republic of Korea"
+  email            : "wbs79@kaist.ac.kr"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
+    #- label: "Email"
+    #icon: "fas fa-fw fa-envelope-square"
+    #url: "mailto:wbs79@kaist.ac.kr"
+      #- label: "Website"
+      #icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+      #- label: "Twitter"
+      #icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+      #- label: "Facebook"
+      #icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+      url: "https://github.com/Mysigyeong"
+      #- label: "Instagram"
+      #icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
 # Site Footer
 footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+  #links:
+    #- label: "Twitter"
+    #icon: "fab fa-fw fa-twitter-square"
       # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+      #- label: "Facebook"
+      #icon: "fab fa-fw fa-facebook-square"
       # url:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
+      #- label: "GitHub"
+      #icon: "fab fa-fw fa-github"
+      #url: "https://github.com/Mysigyeong"
+      #- label: "GitLab"
+      #icon: "fab fa-fw fa-gitlab"
       # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
+      #- label: "Bitbucket"
+      #icon: "fab fa-fw fa-bitbucket"
       # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
+      #- label: "Instagram"
+      #icon: "fab fa-fw fa-instagram"
       # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
-  since: "2013"
+  since: "2026"
 
 
 # Reading Files
