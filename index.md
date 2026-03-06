@@ -5,7 +5,7 @@ author_profile: true
 
 Ph.D Student, Graduate School of Information Security, KAIST<br>
 I'm working at [CysecLab](https://cysec.kr).<br>
-E-mail: wbs79@kaist.ac.kr<br>
+E-mail: wbs79 (at) kaist (dot) ac (dot) kr<br>
 [Curriculum Vitae](assets/cv/CV.pdf)
 
 
